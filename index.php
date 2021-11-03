@@ -12,6 +12,7 @@
 
 require_once __DIR__ . "/classes/product.php";
 require_once __DIR__ . "/classes/user.php";
+require_once __DIR__ . "/classes/creditCard.php";
 
 // create user
 $newUser = new User("nicola", "password", "email@gmail.com");
@@ -43,4 +44,13 @@ $newPremiumUser->addToCart($laptop);
 echo "premium user cart";
 echo '<pre>';
 var_dump($newPremiumUser->getCart());
+echo '</pre>';
+
+
+// aggiungo carta di credito
+$newPremiumUser->addCreditCard(new CreditCard(3949304893, "mario rossi", "21/12/2022", 283));
+
+echo "new credit card";
+echo '<pre>';
+var_dump($newPremiumUser->getCreditCards());
 echo '</pre>';

@@ -7,12 +7,15 @@ class User {
   protected $email;
   protected $cart;
   protected $orders;
+  protected $creditCards;
 
-  public function __construct( $_username, $_password, $_email, $_orders = [], $_cart = [] )
+  public function __construct( $_username, $_password, $_email, $_creditCards = [], $_orders = [], $_cart = [] )
   {
     $this->username = $_username;
     $this->password = $_password;
     $this->email = $_email;
+
+    $this->creditCards = $_creditCards;
     $this->orders = $_orders;
     $this->cart = $_cart;
   }
@@ -21,9 +24,17 @@ class User {
   {
     $this->cart[] = $_product;
   }
-
   public function getCart()
   {
     return $this->cart;
+  }
+
+  public function addCreditCard( $newCard )
+  {
+    $this->creditCards[] = $newCard;
+  }
+  public function getCreditCards()
+  {
+    return $this->creditCards;
   }
 }
