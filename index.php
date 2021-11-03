@@ -50,7 +50,20 @@ echo '</pre>';
 // aggiungo carta di credito
 $newPremiumUser->addCreditCard(new CreditCard(3949304893, "mario rossi", "21/12/2022", 283));
 
-echo "new credit card";
+$creditCards = $newPremiumUser->getCreditCards();
+
+// test try-catch
+try
+{
+  $creditCards[0]->setNumber("verde");
+}
+catch (Exception $e)
+{
+  echo "ERRORE" . $e->getMessage() . "<br>";
+}
+
+// print credit cards
+echo "credit cards";
 echo '<pre>';
-var_dump($newPremiumUser->getCreditCards());
+var_dump($creditCards);
 echo '</pre>';

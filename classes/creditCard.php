@@ -13,4 +13,16 @@ class CreditCard {
     $this->expiryDate = $_expiryDate;
     $this->CVV = $_CVV;
   }
+
+  public function setNumber( $_newNumber )
+  {
+    if ( !is_numeric($_newNumber) )
+    {
+      throw new Exception("devi passare un numero");
+    }
+    else 
+    {
+      $this->number = $_newNumber;
+    }
+  }
 }

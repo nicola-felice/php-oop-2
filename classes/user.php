@@ -29,9 +29,9 @@ class User {
     return $this->cart;
   }
 
-  public function addCreditCard( $newCard )
+  public function addCreditCard( $_newCard )
   {
-    $this->creditCards[] = $newCard;
+    $this->creditCards[] = $_newCard;
   }
   public function getCreditCards()
   {
