@@ -4,6 +4,7 @@ class Product {
   protected $name;
   protected $price;
   protected $availability;
+  protected $discount = 0;
   protected $description;
   protected $reviews;
 
@@ -14,5 +15,10 @@ class Product {
     $this->availability = $_availability;
     $this->description = $_description;
     $this->reviews = $_reviews;
+  }
+
+  public function setDiscount( $_discount )
+  {
+    $this->discount = $_discount;
   }
 }

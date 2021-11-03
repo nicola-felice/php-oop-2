@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . "/premiumUser.php";
 
 class User {
   protected $username;
